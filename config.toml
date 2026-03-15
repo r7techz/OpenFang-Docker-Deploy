@@ -1,0 +1,16 @@
+[core]
+api_key = "admin123"
+api_listen = "0.0.0.0:4200"
+
+[hands.browser]
+model_provider = "groq"
+model = "llama-3.3-70b-versatile"
+model_api_key_env = "GROQ_API_KEY"
+
+[default_model]
+provider = "groq"
+model = "llama-3.3-70b-versatile"
+api_key_env = "GROQ_API_KEY"
+
+[network]
+listen_addr = "0.0.0.0:4200"
