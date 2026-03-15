@@ -27,15 +27,16 @@ RUN apt-get update && apt-get install -y \
     fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
-# Python symlink + Playwright
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip3 install --break-system-packages playwright \
     && python3 -m playwright install chromium
 
-# Custom Skills copy karo
 COPY skills/ /root/.openfang/skills/
+
+# Config inject karo
+COPY config.toml /root/.openfang/config.toml
 
 WORKDIR /app
 EXPOSE 4200
 ENTRYPOINT ["/bin/sh", "-c"]
-CMD ["openfang init --non-interactive; openfang start"]
+CMD ["openfang start"
