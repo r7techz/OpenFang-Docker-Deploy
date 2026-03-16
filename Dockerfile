@@ -1,4 +1,4 @@
-FROM marsel7/openfang:latest
+FROM marsel7/openfang:v1
 USER root
 ENV PORT=4200
 ENV OPENFANG_LISTEN=0.0.0.0:4200
